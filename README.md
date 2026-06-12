@@ -1,59 +1,114 @@
-# Project NUEVO
-![](/assets/NUEVO.png)
+# Example Capstone Portfolio
 
-Lab project material for the MAE 162 robotics course (Winter/Spring 2026).
+This repository is a working example for MAE 162D/E teams. The gallery uses this
+page to demonstrate how to fill in `manifest.json` and how to write a README
+that becomes a clear project page.
 
-## Overview
+## What The Gallery Uses
 
-A modular two-wheeled mobile robot platform designed for hands-on robotics education. Features customizable manipulators and a dual-layer control architecture for teaching embedded systems, ROS2, and mechatronics fundamentals.
+The gallery reads three things from each project repository:
 
-## System Architecture
+| File | Purpose |
+| --- | --- |
+| `manifest.json` | Short structured metadata for the gallery card and project header. |
+| `README.md` | The main project page content. |
+| Thumbnail image | The image referenced by `manifest.thumbnail`, cached by the gallery. |
 
-**Low-Level Control (Arduino)**
-- Real-time motor control (DC, stepper, servo)
-- GPIO, LEDs, and button inputs
-- UART communication to Raspberry Pi
+The project page body is rendered from this README. The manifest should stay
+short and factual; put the real explanation, figures, design notes, and results
+in the README.
 
-**High-Level Control (Raspberry Pi 5 + ROS2)**
-- Decision-making and path planning
-- Camera and GPS sensor processing
-- ROS2 node orchestration
+## Example Manifest
 
-**Custom PCB**
-- Integrates Arduino, motor drivers, and power management
-- Standardized interface for educational reproducibility
+Place `manifest.json` at the root of your repository:
 
-## Repository Structure
-
+```json
+{
+  "schema_version": 1,
+  "course": "MAE 162D/E",
+  "year": 2026,
+  "section": "Tsao",
+  "group": 8,
+  "title": "Example Capstone Portfolio",
+  "authors": ["Example Student", "Example Teammate"],
+  "summary": "A sample capstone portfolio that demonstrates how teams should fill in manifest.json and structure their README for the gallery.",
+  "thumbnail": "assets/creation_of_robot.png",
+  "keywords": ["manifest", "readme", "portfolio"]
+}
 ```
-├── firmware/       Arduino firmware and firmware-specific docs
-├── nuevo_ui/       Raspberry Pi bridge + web UI
-├── ros2_ws/        ROS2 workspace and Pi-side tests
-├── tlv_protocol/   TLV type definitions, payload schemas, generators
-├── NUEVO board/    PCB design files (schematics, layouts, BOM)
-├── mechanical/     CAD files for chassis and manipulators
-├── docs/           Cross-project architecture, protocol, and design docs
-└── assets/         Shared repo assets
+
+Field notes:
+
+- `schema_version` must be `1`.
+- `course` must be exactly `MAE 162D/E`.
+- `year` and `group` are numbers.
+- `section` should match your instructor section.
+- `thumbnail` is a path relative to the repository root.
+- `keywords` is optional, but useful for scanning the gallery.
+
+## Recommended README Structure
+
+Use headings so the project page is easy to skim.
+
+## Project Overview
+
+Start with one short paragraph explaining what your team built and why it
+matters. A reader should understand the project without opening any other file.
+
+## Problem
+
+Describe the engineering problem, constraints, and target users. Include enough
+context for someone outside your team to understand the design choices.
+
+## Design And Approach
+
+Explain the main mechanical, electrical, software, and controls decisions. Use
+short subsections if your project has multiple subsystems.
+
+Example:
+
+| Subsystem | What To Explain |
+| --- | --- |
+| Mechanical | Chassis, actuation, fabrication, mounting, tolerances. |
+| Electrical | Sensors, power, wiring, custom boards, safety limits. |
+| Software | Architecture, important algorithms, data flow, interfaces. |
+| Testing | What you measured, how you validated it, and what changed. |
+
+## Results
+
+Summarize what worked, what did not work, and what you learned. Include numbers
+when possible: speed, accuracy, load, runtime, latency, repeatability, or other
+performance metrics.
+
+## How To Reproduce
+
+If another team or future student should be able to run your work, include the
+minimum steps:
+
+```sh
+# Example only. Replace this with commands that apply to your project.
+git clone <your-repo-url>
+cd <your-repo>
 ```
 
+Then describe hardware setup, required dependencies, calibration, and launch
+commands.
 
+## Team Contributions
 
-## Key Documents
+List major responsibilities clearly.
 
-| Document | Purpose |
-|----------|---------|
-| [docs/README.md](docs/README.md) | Cross-project documentation map and source-of-truth index |
-| [docs/COMMUNICATION_PROTOCOL.md](docs/COMMUNICATION_PROTOCOL.md) | Current human-readable source of truth for protocol behavior, framing, and logical TLV design |
-| [docs/DESIGN_GUIDELINES.md](docs/DESIGN_GUIDELINES.md) | Cross-project conventions, numbering rules, and protocol update workflow |
-| [tlv_protocol/TLV_Payloads.md](tlv_protocol/TLV_Payloads.md) | Exact payload layouts and sizes |
-| [firmware/README.md](firmware/README.md) | Arduino firmware overview, current features, and build instructions |
-| [firmware/docs/README.md](firmware/docs/README.md) | Firmware subsystem documentation index |
-| [NUEVO board/SPECIFICATIONS.md](NUEVO%20board/SPECIFICATIONS.md) | PCB hardware specifications |
+| Member | Contributions |
+| --- | --- |
+| Example Student | Mechanical design, fabrication, validation. |
+| Example Teammate | Controls, software integration, documentation. |
 
-## Technologies
+## Writing Tips
 
-- **Embedded**: Arduino (C/C++)
-- **High-Level**: ROS2 (Python/C++), Raspberry Pi 5
-- **Communication**: UART serial protocol
-- **Sensors**: Camera, GPS, encoders
-- **Hardware**: Custom PCB, stepper/servo motors
+- Keep the summary in `manifest.json` short.
+- Put the real explanation in `README.md`.
+- Prefer concrete results over broad claims.
+- Use tables for comparisons and responsibilities.
+- Use relative paths for repository files.
+- Make sure the thumbnail path in `manifest.json` actually exists.
+- Keep this README useful even if someone reads it outside the gallery.
