@@ -178,9 +178,13 @@ The iframe form also works in the gallery:
 
 ## Link To Internal Docs
 
-It is fine for your root `README.md` to be an index. You can link to more
-detailed documents, subfolder READMEs, PDFs, CAD notes, firmware notes, or test
-plans inside your repo. Use relative links from the repo root.
+It is fine for your root `README.md` to be an index. The gallery caches and
+renders the root README, and that page can point readers to more detailed
+documents, subfolder READMEs, PDFs, CAD notes, firmware notes, or test plans
+inside your repo. Use relative links from the repo root.
+
+This is useful when your project already has internal documentation. Keep the
+root README readable, then link out to the deeper files that own each topic.
 
 Examples from this repo:
 
@@ -191,8 +195,9 @@ Examples from this repo:
 - [Robot runtime README](ros2_ws/README.md)
 - [Board specifications](nuevo_board/SPECIFICATIONS.md)
 
-The gallery converts those relative links into GitHub links for your repository.
-External links, such as links to datasheets or documentation websites, work too.
+The gallery converts those relative links into GitHub links for your repository,
+using the default branch of your repo. External links, such as links to
+datasheets or documentation websites, work too.
 
 ## Writing Tips
 
