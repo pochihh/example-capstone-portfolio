@@ -1,6 +1,6 @@
 # Get Your MAE 162D/E Project Into The Gallery
 
-This gallery is the easiest way to make your capstone project visible to classmates,
+**Isn't it beautiful!?** This gallery is the easiest way to make your capstone project visible to classmates,
 instructors, future teams, and anyone who wants to understand what you built. Your
 project page is generated from your own GitHub repository, so you do not need to
 edit the gallery website directly.
@@ -156,7 +156,7 @@ Rendered result:
 ## Add Videos
 
 For YouTube videos, the simplest option is to paste a YouTube URL on its own
-line. GitHub will show it as a normal link, and the gallery will turn it into an
+line. GitHub will show it as a normal link, and our gallery will turn it into an
 embedded video on your project page.
 
 Markdown you type:
@@ -171,7 +171,7 @@ https://www.youtube.com/watch?v=aDKdmlcwkyk
 
 If you already have a YouTube embed iframe, you can paste the iframe HTML into
 your README outside a code block. GitHub README pages do not render iframe
-embeds, but the gallery will. The syntax looks like this:
+embeds, but our gallery will. The syntax looks like this:
 
 ```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aDKdmlcwkyk?si=80RuBlrg8V4FAhQz" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
