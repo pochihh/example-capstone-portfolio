@@ -155,8 +155,9 @@ Rendered result:
 
 ## Add Videos
 
-For YouTube videos, paste a YouTube URL on its own line or paste the YouTube
-embed iframe. The gallery will render it as an embedded video.
+For YouTube videos, the simplest option is to paste a YouTube URL on its own
+line. GitHub will show it as a normal link, and the gallery will turn it into an
+embedded video on your project page.
 
 Markdown you type:
 
@@ -168,13 +169,13 @@ Rendered result:
 
 https://www.youtube.com/watch?v=aDKdmlcwkyk
 
-The iframe form also works in the gallery:
+If you already have a YouTube embed iframe, you can paste the iframe HTML into
+your README outside a code block. GitHub README pages do not render iframe
+embeds, but the gallery will. The syntax looks like this:
 
 ```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aDKdmlcwkyk?si=80RuBlrg8V4FAhQz" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 ```
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aDKdmlcwkyk?si=80RuBlrg8V4FAhQz" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 ## Link To Internal Docs
 
@@ -214,6 +215,11 @@ datasheets or documentation websites, work too.
 New to Markdown? Start here:
 
 [GitHub for Beginners: Getting started with Markdown](https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-markdown/)
+
+GitHub's README page will show this tutorial video as a link. The gallery will
+embed it:
+
+https://www.youtube.com/watch?v=LxeclcePg-c
 
 The GitHub guide covers the basics: headings, bold text, links, lists, code
 blocks, images, tables, and task lists. Use it while editing this README.
